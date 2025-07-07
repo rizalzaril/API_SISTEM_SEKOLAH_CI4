@@ -13,7 +13,13 @@ $routes->group('api', ['namespace' => 'App\Controllers\Api'], function ($routes)
 
   // Protected endpoints (require JWT token)
   $routes->group('', ['filter' => 'auth'], function ($routes) {
+
+    //Routes siswa
     $routes->get('siswa', 'SiswaController::index');
+
+    //Routes guru
+    $routes->get('guru', 'GuruController::index');
+
     $routes->post('siswa', 'SiswaController::create');
   });
 });
